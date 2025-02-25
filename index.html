@@ -1,29 +1,49 @@
+
 <!DOCTYPE html>
 <html>
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
-  <title>Chaitanya Developers</title>
+  <title>Chaitanya Developers - Plot Management</title>
   <link href="style.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-  <main>
-    <div class="container">
-        <h1>Chaitanya Developers</h1>
-        <h2>Valley-6</h2>
-      <div class="legend">
-        <div class="legend-item">
-          <div class="legend-color available"></div>
-          <span>Available</span>
-        </div>
-        <div class="legend-item">
-          <div class="legend-color sold"></div>
-          <span>Sold</span>
-        </div>
-      </div>
-      <div id="plotContainer" class="plot-container"></div>
+  <div id="loginContainer" class="login-container">
+    <h2 class="text-center">Chaitanya Developers</h2>
+    <h2 class="text-center">Valley-6</h2>
+    <form id="loginForm">
+      <input type="text" id="username" placeholder="Username" required>
+      <input type="password" id="password" placeholder="Password" required>
+      <button type="submit">Login</button>
+    </form>
+  </div>
+
+  <div id="dashboard" class="dashboard hidden">
+    <header>
+      <h1>Chaitanya Developers Dashboard</h1>
+      <button id="logoutBtn">Logout</button>
+    </header>
+    <div class="plot-filters">
+      <button class="filter-btn" data-status="all">All Plots</button>
+      <button class="filter-btn" data-status="available">Available</button>
+      <button class="filter-btn" data-status="booked">Booked</button>
+      <button class="filter-btn" data-status="sold">Sold</button>
     </div>
-  </main>
+    <div id="plotContainer" class="plot-container"></div>
+  </div>
+
+  <div id="plotModal" class="modal hidden">
+    <div class="modal-content">
+      <h3>Update Plot Status</h3>
+      <div class="plot-actions">
+        <button data-status="available">Available</button>
+        <button data-status="booked">Booked</button>
+        <button data-status="sold">Sold</button>
+      </div>
+      <button class="close-modal">Close</button>
+    </div>
+  </div>
+
   <script src="script.js"></script>
 </body>
 </html>
